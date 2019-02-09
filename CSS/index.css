@@ -302,3 +302,29 @@ body {
   width: 100%;
   display: none;
 }
+@keyframes fading {
+  0% {
+    opacity: 0.2;
+  }
+  2% {
+    opacity: 0.5;
+  }
+  10% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  96% {
+    opacity: 0.9;
+  }
+  98% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+.fading{
+  animation:fading 10s infinite;
+}

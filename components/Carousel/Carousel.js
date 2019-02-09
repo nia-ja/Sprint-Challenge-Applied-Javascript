@@ -52,10 +52,14 @@ class Carousel {
 
 }
 
+
 // reference to the carousel
 let carousel = document.querySelector('.carousel')
 // creating new instance of Carousel class
 carousel = new Carousel(carousel);
+
+// images are changing automatically, when user is not clicking (9000ms == 9s)
+setInterval(carousel.showNextImage.bind(carousel), 9000);
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
     1. You will need to grab a reference to the carousel, and in it grab the left and right buttons
