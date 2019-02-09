@@ -18,16 +18,22 @@ class Carousel {
 
     showPreviousImage() {
         // set all images as invisible
-        this.images.forEach(image => image.style.display = 'none');
+        this.images.forEach(image => {
+            image.style.display = 'none';
+            image.classList.remove('animate-left');
+            image.classList.remove('animate-right');
+        });
         // substruct 1 from index
         this.imageIndex -= 1;
         //if index is negative
         if (this.imageIndex < 0) {
             // grab last image from NodeList
             this.imageIndex = this.images.length - 1;
+            this.images[this.imageIndex].classList.toggle('animate-left');
             //display last image
             this.images[this.imageIndex].style.display = 'block';
         } else {
+            this.images[this.imageIndex].classList.toggle('animate-left');
             //display image with currant index
             this.images[this.imageIndex].style.display = 'block';
         }
@@ -35,16 +41,22 @@ class Carousel {
 
     showNextImage() {
         // set all images as invisible
-        this.images.forEach(image => image.style.display = 'none');
+        this.images.forEach(image => {
+            image.style.display = 'none';
+            image.classList.remove('animate-left');
+            image.classList.remove('animate-right');
+        });
         //adds 1 to index
         this.imageIndex += 1;
         // if index is bigger then length of immage NodeList
         if (this.imageIndex > (this.images.length - 1)) {
             // grab first image from NodeList
             this.imageIndex = 0;
+            this.images[this.imageIndex].classList.toggle('animate-right');
             //display first image
             this.images[this.imageIndex].style.display = 'block';
         } else {
+            this.images[this.imageIndex].classList.toggle('animate-right');
             //display image with currant index
             this.images[this.imageIndex].style.display = 'block';
         }
