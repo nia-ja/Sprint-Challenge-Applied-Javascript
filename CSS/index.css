@@ -292,13 +292,80 @@ body {
   top: 50%;
   left: 25px;
   transform: translate(0, -50%);
+  z-index: 2;
 }
 .carousel .right-button {
   top: 50%;
   right: 25px;
   transform: translate(0, -50%);
+  z-index: 2;
 }
 .carousel img {
   width: 100%;
   display: none;
+}
+
+/* FADING ANIMATION
+
+@keyframes fading {
+  0% {
+    opacity: 0.2;
+  }
+  2% {
+    opacity: 0.5;
+  }
+  10% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  96% {
+    opacity: 0.9;
+  }
+  98% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+.fading{
+  animation:fading 10s infinite;
+} */
+
+/* FROM LEFT TO RIGHT */
+@keyframes animateLeft {
+  from {
+    left: -300px;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+.animate-left {
+  position: relative;
+  animation: animateLeft 0.4s;
+  z-index: 1;
+}
+
+/* FROM RIGHT TO LEFT */
+@keyframes animateRight {
+  from {
+    right: -300px;
+    opacity: 0;
+  }
+  to {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+.animate-right {
+  position: relative;
+  animation: animateRight 0.4s;
+  z-index: 1;
 }
